@@ -1,0 +1,4 @@
+extend type Mutation @guard {
+    createTaskList(user_id: ID!, name: String!): Message!
+        @field(resolver: "TaskListMutator@__invoke")
+}

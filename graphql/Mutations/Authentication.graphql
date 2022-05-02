@@ -1,0 +1,6 @@
+extend type Mutation {
+    login(email: String!, password: String!): AuthPayload!
+    logout: User @guard
+}
+
+union AuthPayload = LoginPayload | Error

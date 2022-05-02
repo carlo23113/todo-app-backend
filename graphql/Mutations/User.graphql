@@ -1,0 +1,10 @@
+extend type Mutation {
+    createUser(input: CreateUserInput @spread): Message
+        @field(resolver: "UserMutator@__invoke")
+}
+
+input CreateUserInput {
+    email: String!
+    username: String!
+    password: String!
+}

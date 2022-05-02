@@ -1,0 +1,17 @@
+interface Message {
+    message: String!
+}
+
+type Success implements Message {
+    message: String!
+}
+
+type Error implements Message {
+    message: String!
+}
+
+type LoginPayload implements Message {
+    access_token: String!
+    token_type: String!
+    expires_in: Int!
+}

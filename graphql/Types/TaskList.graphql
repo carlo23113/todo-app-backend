@@ -1,0 +1,14 @@
+extend type Query @guard {
+    taskLists(user_id: ID): [TaskList] @field(resolver: "TaskList@__invoke")   
+}
+
+type TaskList {
+    id: ID
+    name: String
+    tasks: [Task]! @hasMany
+    user: User! @belongsTo
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+}
+

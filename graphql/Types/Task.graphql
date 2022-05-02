@@ -1,0 +1,13 @@
+extend type Query @guard {
+    tasks: [Task] @all
+}
+
+type Task {
+    id: ID!
+    task_list_id: ID
+    description: String!
+    task_list: TaskList! @belongsTo
+    created_at: DateTime
+    updated_at: DateTime
+    deleted_at: DateTime
+}
